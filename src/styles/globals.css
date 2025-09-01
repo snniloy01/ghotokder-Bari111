@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* GhotokderBari Brand Colors */
+  --ghotok-warm-beige: #F8EDE3;
+  --ghotok-pastel-pink: #F7C5CC;
+  --ghotok-muted-green: #A3B18A;
+  --ghotok-white: #FFFFFF;
+  --ghotok-dark-gray: #3B3B3B;
+  --ghotok-light-gray: #EAEAEA;
+
+  /* Design System */
+  --font-size: 14px;
+  --background: #F8EDE3;
+  --foreground: #3B3B3B;
+  --card: #FFFFFF;
+  --card-foreground: #3B3B3B;
+  --popover: #FFFFFF;
+  --popover-foreground: #3B3B3B;
+  --primary: #A3B18A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F7C5CC;
+  --secondary-foreground: #3B3B3B;
+  --muted: #EAEAEA;
+  --muted-foreground: #717182;
+  --accent: #F7C5CC;
+  --accent-foreground: #3B3B3B;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(59, 59, 59, 0.1);
+  --input: transparent;
+  --input-background: #FFFFFF;
+  --switch-background: #EAEAEA;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #A3B18A;
+  --chart-1: #A3B18A;
+  --chart-2: #F7C5CC;
+  --chart-3: #F8EDE3;
+  --chart-4: #3B3B3B;
+  --chart-5: #EAEAEA;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: #3B3B3B;
+  --foreground: #F8EDE3;
+  --card: #2A2A2A;
+  --card-foreground: #F8EDE3;
+  --popover: #2A2A2A;
+  --popover-foreground: #F8EDE3;
+  --primary: #A3B18A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F7C5CC;
+  --secondary-foreground: #3B3B3B;
+  --muted: #4A4A4A;
+  --muted-foreground: #B0B0B0;
+  --accent: #F7C5CC;
+  --accent-foreground: #3B3B3B;
+  --border: rgba(248, 237, 227, 0.1);
+  --input: #4A4A4A;
+  --input-background: #4A4A4A;
+  --switch-background: #4A4A4A;
+}
+
+@theme inline {
+  --color-ghotok-warm-beige: var(--ghotok-warm-beige);
+  --color-ghotok-pastel-pink: var(--ghotok-pastel-pink);
+  --color-ghotok-muted-green: var(--ghotok-muted-green);
+  --color-ghotok-white: var(--ghotok-white);
+  --color-ghotok-dark-gray: var(--ghotok-dark-gray);
+  --color-ghotok-light-gray: var(--ghotok-light-gray);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-ghotok-warm-beige text-ghotok-dark-gray;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Cultural Pattern Background */
+.cultural-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23A3B18A' fill-opacity='0.05'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/**
+ * Base typography with custom sizing
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--ghotok-dark-gray);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--ghotok-dark-gray);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--ghotok-dark-gray);
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--ghotok-dark-gray);
+    }
+
+    p {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--ghotok-dark-gray);
+    }
+
+    label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--ghotok-dark-gray);
+    }
+
+    button {
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ghotok-light-gray);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ghotok-muted-green);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8FA177;
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+/* Floating animation for cultural elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 16px;
+  }
+}
